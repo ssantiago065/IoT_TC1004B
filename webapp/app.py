@@ -1,10 +1,12 @@
-from flask import Flask, render_template,request,url_for,redirect
+import os
+from flask import Flask, render_template, request, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 from sqlalchemy.sql import func
 
+
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:test@localhost/mydb'
+app.config['SQLALCHEMY_DATABASE_URI'] ='mysql://root:test@127.0.0.1:3306/mydb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -25,6 +27,11 @@ class Student(db.Model):
 def hello_world():
     return "<p>Hello, World!</p>"
 
-@app.route("/user/<name>")
+@app.route("/usuario/<name>")
 def hello(name):
     return f"<p>Hello, {name}!</p>"
+
+@app.route("/estudiantes")
+def estudiantes():
+    students = Student.query.all()
+    return render_template("estudiantes.html",students=students)

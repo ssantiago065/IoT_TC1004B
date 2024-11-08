@@ -1,0 +1,23 @@
+student_john = Student(firstname='john', lastname='doe',
+                        email= 'jd@example.com', age=23,
+                        bio='Biology student')
+
+student_mary = Student(firstname='mary', lastname='smith',
+                       email='msmith@example.com', age=21,
+                       bio='Psychology student')
+
+student_alex = Student(firstname='alex', lastname='johnson',
+                       email='ajohnson@example.com', age=24,
+                       bio='Engineering student')
+
+student_sophia = Student(firstname='sophia', lastname='williams',
+                         email='swilliams@example.com', age=22,
+                         bio='Computer Science student')
+
+student_michael = Student(firstname='michael', lastname='brown',
+                          email='mbrown@example.com', age=25,
+                          bio='Mathematics student')
+
+student_emily = Student(firstname='emily', lastname='davis',
+                        email='edavis@example.com', age=20,
+                        bio='Physics student')
